@@ -10,7 +10,7 @@ class CliExample < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/ThibautRobinet/cli-example/releases/download/v0.1.0/cli-example_0.1.0_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryDownloadStrategy
+      url "https://github.com/ThibautRobinet/cli-example/releases/download/v0.1.0/cli-example_0.1.0_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
       sha256 "8dc0f0322a1dad59c4472472fc330bcdb11f175347ae26925d94aefc773a90ee"
 
       def install
@@ -18,7 +18,7 @@ class CliExample < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/ThibautRobinet/cli-example/releases/download/v0.1.0/cli-example_0.1.0_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryDownloadStrategy
+      url "https://github.com/ThibautRobinet/cli-example/releases/download/v0.1.0/cli-example_0.1.0_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
       sha256 "f36c8cf4781cb74440f040c2f29fb7cc50e06e54cc7f52fad5a492e4bd20e366"
 
       def install
@@ -29,7 +29,7 @@ class CliExample < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/ThibautRobinet/cli-example/releases/download/v0.1.0/cli-example_0.1.0_linux_amd64.tar.gz", using: GitHubPrivateRepositoryDownloadStrategy
+      url "https://github.com/ThibautRobinet/cli-example/releases/download/v0.1.0/cli-example_0.1.0_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
       sha256 "db7d23ee6a4a7085b11ec9aca1f97a32cace6898e7e1482508ed64e7d230bcd0"
 
       def install
@@ -37,7 +37,7 @@ class CliExample < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ThibautRobinet/cli-example/releases/download/v0.1.0/cli-example_0.1.0_linux_arm64.tar.gz", using: GitHubPrivateRepositoryDownloadStrategy
+      url "https://github.com/ThibautRobinet/cli-example/releases/download/v0.1.0/cli-example_0.1.0_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
       sha256 "9d38fa6801c34c758dbc4dd9766a6677ad754c25ec0c4a149eb6c6482ca29e81"
 
       def install
