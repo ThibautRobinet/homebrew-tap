@@ -6,20 +6,20 @@ require_relative "download_strategy"
 class CliExample < Formula
   desc ""
   homepage "https://github.com/ThibautRobinet/cli-example"
-  version "0.1.4"
+  version "0.1.6"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/ThibautRobinet/cli-example/releases/download/v0.1.4/cli-example_0.1.4_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "d952cc652f4500f6a94d33f61fdd77a4869a5fbeb021b70622d990ff9a2674ad"
+    if Hardware::CPU.arm?
+      url "https://github.com/ThibautRobinet/cli-example/releases/download/v0.1.6/cli-example_0.1.6_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "e11a5c335c3c2e3316c06f932930c51abddc9bb14aa73568b594f023afde9f78"
 
       def install
         bin.install "cli-example"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/ThibautRobinet/cli-example/releases/download/v0.1.4/cli-example_0.1.4_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "7e1251bdba2a516b7a2e2eda7e9854d22fe53853c71bad347f3182c1ddb0b221"
+    if Hardware::CPU.intel?
+      url "https://github.com/ThibautRobinet/cli-example/releases/download/v0.1.6/cli-example_0.1.6_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "0a6ce8076f021cfec6463b7ec85c2e252136256bf945f4c7c8542de98c8a58bc"
 
       def install
         bin.install "cli-example"
@@ -28,17 +28,17 @@ class CliExample < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ThibautRobinet/cli-example/releases/download/v0.1.4/cli-example_0.1.4_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "533b8a7cb677dd7409e14d64b102219a22f66949faf07458ee0ec9a04d4c85dd"
+    if Hardware::CPU.intel?
+      url "https://github.com/ThibautRobinet/cli-example/releases/download/v0.1.6/cli-example_0.1.6_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "f6daffc3a5704ff1ca46257e2a2ca9c1966070b02dd7aeec93366184547b8c66"
 
       def install
         bin.install "cli-example"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/ThibautRobinet/cli-example/releases/download/v0.1.4/cli-example_0.1.4_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "3c932c2a919bb63540c32f41500e73a882c19158841018c09bb6011b3ea9b5a8"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ThibautRobinet/cli-example/releases/download/v0.1.6/cli-example_0.1.6_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "21209ba65927f799176073eebd0f4c9628d32a359e1f221807c05f139b03a781"
 
       def install
         bin.install "cli-example"
